@@ -64,6 +64,7 @@ public class CoverArtCollector extends AppCompatActivity {
         numDownloadedView = findViewById(R.id.cover_art_num_downloaded);
     }
 
+    
     // initialize music list
     private void getAlbumList() {
         albumList = getMusicList();
