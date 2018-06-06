@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -55,14 +54,14 @@ public class CoverArtCollector extends AppCompatActivity {
     }
 
     private void initViews() {
-        songListView = findViewById(R.id.songList);
+        songListView = findViewById(R.id.cover_art_song_list);
 
-        emptyListView = findViewById(R.id.empty_list);
+        emptyListView = findViewById(R.id.cover_art_empty_list);
         songListView.setEmptyView(emptyListView);
 
-        findAllArtView = findViewById(R.id.find_all_art);
-        findUnknownArtView = findViewById(R.id.find_unknown_art);
-        numDownloadedView = findViewById(R.id.num_downloaded);
+        findAllArtView = findViewById(R.id.cover_art_find_all_art);
+        findUnknownArtView = findViewById(R.id.cover_art_find_unknown_art);
+        numDownloadedView = findViewById(R.id.cover_art_num_downloaded);
     }
 
     // initialize music list
@@ -205,25 +204,6 @@ public class CoverArtCollector extends AppCompatActivity {
             }
         }
 
-        return songs;
-    }
-
-    // this is only for the purpose of allowing the project to be reviewed on phones w/o music
-    private List<CoverArt> fakeMusicList() {
-        List<CoverArt> songs = new ArrayList<>();
-
-        songs.add(new CoverArt("Genesis", "Selling England By The Pound"));
-        songs.add(new CoverArt("2Pac & Outlawz", "Gang Related - Wild Wild West"));
-        songs.add(new CoverArt("David Bowie", "Space Oddity"));
-        songs.add(new CoverArt("Pink Floyd", "Dark Side Of The Moon"));
-        songs.add(new CoverArt("Eminem", "Recovery (Deluxe Edition)"));
-        songs.add(new CoverArt("Eric Clapton", "Unplugged"));
-        songs.add(new CoverArt("Kansas", "Point Of Know Return"));
-        songs.add(new CoverArt("Led Zeppelin", "Led Zeppelin IV"));
-        songs.add(new CoverArt("Prince", "Purple Rain (Soundtrack)"));
-        songs.add(new CoverArt("Rush", "Chronicles [Disc 2]"));
-        songs.add(new CoverArt("The Beatles", "Abbey Road"));
-        songs.add(new CoverArt("The Police", "Synchronicity"));
         return songs;
     }
 }

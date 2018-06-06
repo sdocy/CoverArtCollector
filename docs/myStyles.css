@@ -38,6 +38,10 @@ body {
 	width: 500px;
 }
 
+.large-image {
+	width: 700px
+}
+
 .center {
 	text-align: center;
 }

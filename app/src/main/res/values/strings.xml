@@ -8,6 +8,7 @@
     <string name="findCoverArt">Find cover art</string>
     <string name="noCoverArt">No cover art found.</string>
     <string name="noInternet">No internet connection.</string>
+    <string name="noMusic">No music found.</string>
 
     <string name="coversDownloaded" formatted="false">%1$d cover(s) downloaded</string>
 </resources>

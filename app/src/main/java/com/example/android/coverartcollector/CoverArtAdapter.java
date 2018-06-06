@@ -34,7 +34,7 @@ public class CoverArtAdapter extends ArrayAdapter<CoverArt> implements LoaderMan
     private int numDownloaded = 0;          // number of covers downloaded
 
     private CoverArt albumToRetrieve;       // current album we are retrieving art for
-    private String musicBrainzReleaseGroupRequest;  // holds URL for a cover art request
+    private String albumGetInfoRequest;  // holds URL for a cover art request
 
     private boolean loadingNow = false;             // is there a lowda currently running, it must finish before
                                                     // we start a new one
@@ -86,16 +86,16 @@ public class CoverArtAdapter extends ArrayAdapter<CoverArt> implements LoaderMan
             listItem = LayoutInflater.from(myContext).inflate(R.layout.cover_art_layout, parent, false);
 
             holder = new ViewHolder();
-            holder.artistName = listItem.findViewById(R.id.artist_name);
-            holder.albumName = listItem.findViewById(R.id.album_name);
-            holder.findArt = listItem.findViewById(R.id.find_art);
-            holder.noArt = listItem.findViewById(R.id.no_art);
-            holder.noNet = listItem.findViewById(R.id.no_internet);
-            holder.progress = listItem.findViewById(R.id.progress_bar);
-            holder.deviceArt = listItem.findViewById(R.id.device_art);
-            holder.downloadArt = listItem.findViewById(R.id.download_art);
-            holder.deviceArtCheck = listItem.findViewById(R.id.device_art_checkmark);
-            holder.downloadArtCheck = listItem.findViewById(R.id.download_art_checkmark);
+            holder.artistName = listItem.findViewById(R.id.cover_art_artist_name);
+            holder.albumName = listItem.findViewById(R.id.cover_art_album_name);
+            holder.findArt = listItem.findViewById(R.id.cover_art_find_art);
+            holder.noArt = listItem.findViewById(R.id.cover_art_no_art);
+            holder.noNet = listItem.findViewById(R.id.cover_art_no_internet);
+            holder.progress = listItem.findViewById(R.id.cover_art_progress_bar);
+            holder.deviceArt = listItem.findViewById(R.id.cover_art_device_art);
+            holder.downloadArt = listItem.findViewById(R.id.cover_art_download_art);
+            holder.deviceArtCheck = listItem.findViewById(R.id.cover_art_device_art_checkmark);
+            holder.downloadArtCheck = listItem.findViewById(R.id.cover_art_download_art_checkmark);
 
             listItem.setTag(holder);
         } else {
@@ -317,8 +317,8 @@ public class CoverArtAdapter extends ArrayAdapter<CoverArt> implements LoaderMan
         }
 
         // form album.getinfo URL query
-        musicBrainzReleaseGroupRequest = netWork.formatMusicBrainzAlbumGetinfoRequest(currElem);
-        if (musicBrainzReleaseGroupRequest == null) {
+        albumGetInfoRequest = netWork.formatMusicBrainzAlbumGetinfoRequest(currElem);
+        if (albumGetInfoRequest == null) {
             return;
         }
 
@@ -334,7 +334,7 @@ public class CoverArtAdapter extends ArrayAdapter<CoverArt> implements LoaderMan
     @Override
     // create a lowda for downloading cover art
     public Loader<DownloadedCoverArt> onCreateLoader(int id, Bundle args) {
-        return new CoverLowda(myContext, musicBrainzReleaseGroupRequest);
+        return new CoverLowda(myContext, albumGetInfoRequest);
     }
 
     @Override

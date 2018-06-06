@@ -9,7 +9,7 @@
 <body class="gradientbg">
 
 <div align="center">
-		<img class="med-image" src="gridmusictrans.png">
+		<img class="large-image" src="CAC.png">
 </div>
 
 <div>
@@ -17,7 +17,7 @@
 		<div class="center">
 			<p>
 				Check out the code at the project repo<br/>
-				<a class="white-text" href="https://github.com/sdocy/GridMusic" target="_blank">https://github.com/sdocy/GridMusic</a><br/><br/>
+				<a class="white-text" href="https://github.com/sdocy/CoverArtCollector" target="_blank">https://github.com/sdocy/CoverArtCollector</a><br/><br/>
 			</p>
 			
 			<p>Send me feedback, questions, or ideas
@@ -29,30 +29,49 @@
 
 		<div>
 			<p>
-			<br/>An experiment using gridviews to provide customizable music playlists.  Normal playlists must be played
-			in order, randomly, or by the rules of some unknown so-called genius algorithm.  This prototype attempts to give
-			listeners control over the flow of their playlists, while still retaining some randomness in the playback to
-			keep playback from getting stale and predictable.<br/><br/>
-			Listeners lay out the songs, artists or albums for their playlist in a grid pattern.  Once playback has commenced,
-			the next song to play will be randomly chosen from adjacent playlist grids (vertically and horizontally adjacent
-			grids only.  If an unplayed choice is not available adjacent to the last played song, a new grid to start from is
-			randomly chosen.<br/><br/>
+			<br/>Searches your device for music files and associated cover art, and allows you to search the internet for additional
+				 cover art and download any art missing from your music library.<br/><br/>
+				 Planned for integration with my <a class="white-text" href="https://sdocy.github.io/GridMusic" target="_blank">Grid Music</a>
+				 music player.
 			</p>
 		</div>
 		
 		<div>
 			<br/><br/>Current implemented features :<br/>
 			<ul>
-				<li>Pause and resume playback.</li>
-				<li>Choose to play a single song per grid or all songs on the grid.</li>
-				<li>Tap on a grid to choose it to be played next.</li>
-				<li>Reset played grids so that they may be played again.</li>
-				<li>Toggle individual grids between played / not-played.</li>
-				<li>Settings may be changed while the grid choosing algorithm is running.</li>
+				<li>Uses MediaStore Content Provider to discover music files and associated cover art on your device</li>
+				<li>Uses public JSON APIs to query and download album cover art</li>
+				<li>Integrated google search as an alternative method for searching for missing cover art</li>
+			</ul>
+			
+			<br/><br/>New Android development techniques I explored with this project :<br/>
+			<ul>
+				<li>My first use of ViewHolders with ListViews......love it...will definitely integrate them into GridMusic</li>
+				<li>Use of LoaderManagers to asynchronously perform network tasks</li>
+				<li>Retrieval and parsing of JSON data from public web APIs</li>
+				<li>Use of progressbars and empty list views to enhance ListView presentation</li>
+				<li>The use of RelativeLayouts and selective view visibility to efficiently switch between view content</li>
+				<li>Having multiple clickable view elements within a ListView element</li>
+				<li>Use of custom class comparators and Collection.sort() to organize ListView data</li>
 			</ul>
 		</div>
 	</div>
+	
+	<div class="text-right center">
+		<p><br/><br/></p>
+		<video width="360" height="640" controls preload >
+			<source src="coverArtCollector.mp4">
+		</video>
+	</div>
 </div>
+
+<div class="text-left indentleft">
+	<br/><br/>Todo :<br/>
+	<ul>
+		<li>Make use of CursorLoader to asynchronously search device for music and art</li>
+		<li>Provide option to save downloaded art to device</li>
+				
+	</ul>
 
 </body>
 </html>
