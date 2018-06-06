@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cover Art Collector</string>
+
+    <string name="coverArt">Cover Art</string>
+
+    <string name="findAllArt">Find all\ncover art</string>
+    <string name="findUnknownArt">Find unknown\ncover art</string>
+    <string name="findCoverArt">Find cover art</string>
+    <string name="noCoverArt">No cover art found.</string>
+    <string name="noInternet">No internet connection.</string>
+
+    <string name="coversDownloaded" formatted="false">%1$d cover(s) downloaded</string>
+</resources>

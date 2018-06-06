@@ -1,0 +1,65 @@
+
+body {
+	color: white;
+}
+
+.gradientbg {
+	background : linear-gradient(black, #000066);
+}
+
+.blackbg {
+	background-color : black;
+}
+
+.text-left {
+	display: inline-block;
+	vertical-align : top;
+	width: 46%;
+}
+
+.text-right {
+	display: inline-block;
+	width: 46%;
+}
+
+.indentleft {
+	margin-left: 20px;
+}
+
+.indentright {
+	margin-right: 20px;
+}
+
+.small-image {
+	width: 300px;
+}
+
+.med-image {
+	width: 500px;
+}
+
+.center {
+	text-align: center;
+}
+
+a:link {
+	color: #4d4dff;
+}
+
+a:visited {
+	color: #9999ff;
+}
+
+a:hover {
+	color: #ccccff;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

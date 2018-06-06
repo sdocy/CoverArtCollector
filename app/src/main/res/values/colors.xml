@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#b3f0ff</color>
+
+    <color name="darkBlue">#000080</color>
+    <color name="highlightBlue">#b3f0ff</color>
+    <color name="buttonTextColor">#8080ff</color>
+    <color name="errorRed">#990000</color>
+    <color name="filterPlayed">#88000000</color>
+    <color name="filterNotPlayed">#00000000</color>
+</resources>

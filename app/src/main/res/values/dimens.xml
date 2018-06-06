@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gridElemDimen">50dp</dimen>
+    <dimen name="checkMarkDimen">24dp</dimen>
+    <dimen name="mainButtonText">20sp</dimen>
+</resources>
